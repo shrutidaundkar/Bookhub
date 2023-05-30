@@ -49,6 +49,33 @@
   cursor: pointer;
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid var(--orange);
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.search-button {
+  background-color: var(--yellow);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button i {
+  color: var(--orange);
+}
+
 .content {
   flex-grow: 1;
   padding: 20px;
