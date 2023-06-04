@@ -1,31 +1,35 @@
 :root {
-  --yellow: #FFC878;
-  --orange: #fca61f;
+  --light-purple: #9b59b6;
+  --purple: #8e44ad;
   --black: #242d49;
   --gray: #788097;
-  --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
-  --pink: #FF919D;
+  /* --purple: linear-gradient(180deg, #bb67ff 0%, #c484f3 100%); */
+  --pink: #ff919d;
   --glass: rgba(255, 255, 255, 0.54);
   --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
   --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
   --activeItem: #f799a354;
+  --background: #f5f6fa;
 }
 
 .App {
   text-align: center;
   display: flex;
   height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar {
   width: 200px;
-  background-color: var(--orange);
+  background-color: var(--purple);
   color: white;
   padding: 20px;
+  height: 100%;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: xx-large;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -42,10 +46,12 @@
   margin-bottom: 10px;
   padding: 10px;
   transition: background-color 0.3s ease;
+  font-size: large;
+  font-weight: bold;
 }
 
 .options li:hover {
-  background-color: var(--yellow);
+  background-color: var(--light-purple);
   cursor: pointer;
 }
 
@@ -54,18 +60,20 @@
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 20px;
+  padding: 10px;
+  background-color: var(--purple);
 }
 
 input[type="text"] {
   padding: 10px;
-  border: 1px solid var(--orange);
+  border: 1px solid var(--purple);
   border-radius: 4px;
   margin-right: 10px;
   width: 200px;
 }
 
 .search-button {
-  background-color: var(--yellow);
+  background-color: var(--purple);
   border: none;
   padding: 10px;
   border-radius: 4px;
@@ -73,10 +81,31 @@ input[type="text"] {
 }
 
 .search-button i {
-  color: var(--orange);
+  color: var(--purple);
 }
 
 .content {
   flex-grow: 1;
-  padding: 20px;
+}
+.book-card-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.book-card {
+  width: 175px;
+  /* height: 250px; */
+  /* display: inline-block; */
+  background-color: var(--light-purple);
+  margin: 20px;
+  padding: 10px;
+}
+.book-card-title {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+}
+.book-card-img {
+  width: 150px;
+  height: 200px;
 }
