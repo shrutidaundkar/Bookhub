@@ -6,7 +6,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 library.add(faSearch);
 const Topbar = () =>{
     return <div className="search-bar">
-          <input type="text" placeholder="Search..." />
+          <input type="text" placeholder="Type to search..." />
           <button className="search-button">
           <FontAwesomeIcon icon={faSearch} /> 
           </button>
