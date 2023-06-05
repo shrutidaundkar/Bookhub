@@ -27,12 +27,12 @@
   justify-content: flex-end;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: var(--purple);
+  background-color: var(--black);
 }
 
 input[type="text"] {
   padding: 10px;
-  border: 1px solid var(--purple);
+  border: 1px solid var(--black);
   border-radius: 4px;
   margin-right: 10px;
   width: 200px;
@@ -40,14 +40,14 @@ input[type="text"] {
 
 .sidebar {
   width: 200px;
-  background-color: var(--purple);
+  background-color: var(--black);
   color: white;
   padding: 20px;
   height: 100%;
 }
 
 .search-button {
-  background-color: var(--purple);
+  background-color: var(--black);
   border: none;
   padding: 20px;
   padding-left: 2px;
@@ -55,9 +55,9 @@ input[type="text"] {
   cursor: pointer;
 }
 
-.search-button i {
-  color: var(--purple);
-}
+/* .search-button i {
+  color: var(--black);
+} */
 
 .logo {
   font-size: xx-large;
@@ -82,7 +82,7 @@ input[type="text"] {
 }
 
 .options li:hover {
-  background-color: var(--light-purple);
+  background-color: var(--gray);
   cursor: pointer;
 }
 
@@ -92,7 +92,7 @@ input[type="text"] {
   justify-content: flex-end;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: var(--purple);
+  background-color: var(--black);
 }
 
 .content {
@@ -118,8 +118,8 @@ body {
 .book-card {
   flex: none;
   width: 200px;
-  height: 320px;
-  background-color: var(--light-purple);
+  height: 330px;
+  background-color: var(--gray);
   margin: 20px;
   padding: 10px;
   box-sizing: border-box;
@@ -139,3 +139,14 @@ body {
   width: 150px;
   height: 250px;
 }
+
+.book-card-author {
+  float:center;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: black;
+  margin-top: 10px;
+
+}
+
+
