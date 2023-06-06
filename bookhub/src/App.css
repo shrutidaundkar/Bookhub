@@ -43,7 +43,7 @@ input[type="text"] {
   background-color: var(--black);
   color: white;
   padding: 20px;
-  height: 100%;
+  height: 125%;
 }
 
 body {
@@ -74,7 +74,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 50vh; /* Adjust as per your needs */
+  height: 50vh; 
   width: 100%;
   padding: 10px;
 }
@@ -135,7 +135,7 @@ body {
   max-width: 100vw;
 }
 
-.book-card {
+/* .book-card {
   flex: none;
   width: 200px;
   height: 330px;
@@ -144,6 +144,15 @@ body {
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
+} */
+
+.book-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--gray);
+  margin: 20px;
 }
 
 .book-card-title {
@@ -158,11 +167,13 @@ body {
 .book-card-img {
   width: 150px;
   height: 250px;
+  flex: 1;
 } 
 
 .book-details {
   display: flex;
   flex-direction: column;
+  flex: 2;
   justify-content: center;
   padding-left: 20px;
 }
