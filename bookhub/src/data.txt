@@ -1,0 +1,243 @@
+import React from "react";
+import "./App.css";
+import Sidebar from "./scenes/global/Sidebar";
+import Topbar from "./scenes/global/Topbar";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Home from "./scenes/dashboard";
+import Authors from "./scenes/authors";
+import Statistics from "./scenes/statistics";
+
+function App() {
+  return (
+    <div className="App">
+      <Sidebar />
+      <main className="content">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/authors" element={<Authors />} />
+            <Route path="/statistics" element={<Statistics />} />
+          </Routes>
+        </BrowserRouter>
+      </main>
+    </div>
+  );
+}
+
+export default App;
+-------------------------------
+:root {
+    --light-purple: #9b59b6;
+    --purple: #8e44ad;
+    --black: #242d49;
+    --gray: #788097;
+    --purple: linear-gradient(180deg, #bb67ff 0%, #c484f3 100%);
+    --pink: #ff919d;
+    --glass: rgba(255, 255, 255, 0.54);
+    --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+    --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+    --activeItem: #f799a354;
+    --background: #f5f6fa;
+  }
+  
+  .App {
+    text-align: center;
+    display: flex;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    overflow-y: scroll;
+  }
+  
+  .search-bar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: var(--black);
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--black);
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: var(--black);
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    /* justify-items: flex-start; */
+    /* display: flex; */
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .search-button {
+    background-color: var(--black);
+    border: none;
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 10px;
+  }
+  
+  .search-button:hover {
+    background-color: var(--gray);
+  }
+  
+  .search-result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .logo {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* display: flex; */
+    /* flex-direction: column; */
+  }
+  
+  .options-link {
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .options-link:hover {
+    background-color: var(--gray);
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--black);
+    font-size: larger;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .content {
+    flex-grow: 1;
+    /* overflow-x: visible; */
+    overflow-y: scroll;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .book-container {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px;
+    width: 1290px;
+    max-width: 100vw;
+  }
+  
+  .book-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--gray);
+    margin: 10px 20px;
+    min-width: 360px;
+    height: 260px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .book-card-img {
+    width: 125px;
+    height: 200px;
+  }
+  
+  .book-card-info {
+    text-align: left;
+    padding-left: 20px;
+  }
+  .book-card-info-title {
+    font-size: large;
+    font-weight: bolder;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-main {
+    position: fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2%;
+  }
+  
+  .display-block {
+    display: block;
+  }
+  
+  .display-none {
+    display: none;
+  }
+  .modal-img {
+  }
+  .modal-details {
+  }
+  .navbar-expand .navbar-nav {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .sidebar-container {
+    margin-top: 0;
+    margin-bottom: auto;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: white;
+  }
+  
