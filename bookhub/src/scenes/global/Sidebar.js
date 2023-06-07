@@ -1,15 +1,27 @@
+import { Container, Navbar, Nav } from "react-bootstrap";
 const Sidebar = () => {
   return (
-    <div className="sidebar">
-      <div className="logo">
-        <h3>BookHub</h3>
-      </div>
-      <ul className="options">
-        <li href="/">Books</li>
-        <li href="/authors">Authors</li>
-        <li to={"/statistics"}>Statistics</li>
-      </ul>
-    </div>
+    <Navbar className="sidebar">
+      <Container className="sidebar-container">
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Nav className="options">
+            <div>
+              <h3 className="logo">BookHub</h3>
+            </div>
+            <Nav.Link className="options-link" href="/">
+              Books
+            </Nav.Link>
+            <Nav.Link className="options-link" href="/authors">
+              Authors
+            </Nav.Link>
+            <Nav.Link className="options-link" href="/statistics">
+              Statistics
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 export default Sidebar;
