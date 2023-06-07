@@ -8,6 +8,7 @@ import Home from "./scenes/dashboard";
 import { useState } from "react";
 import Authors from "./scenes/authors";
 import Statistics from "./scenes/statistics";
+import AuthorDetails from "./scenes/global/AuthorDetails";
 
 function App() {
   const [searchResult, setSearchResult] = useState(null);
@@ -24,6 +25,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/authors" element={<Authors />} />
             <Route path="/statistics" element={<Statistics />} />
+            <Route path="/authors" exact component={Authors} />
+            <Route path="/authors/:authorKey" component={AuthorDetails} />
           </Routes>
         </BrowserRouter>
       </main>
