@@ -14,8 +14,8 @@ const SubjectBooks = (props) => {
   }, [props]);
 
   return (
-    <div>
-      <h2>Subject: {books.name}</h2>
+    <div className="text-left bg-secondary">
+      <h2 className="text-left">Subject: {books.name}</h2>
       {books.works !== undefined ? (
         <div class="book-container">
           {books.works.map((work) => (

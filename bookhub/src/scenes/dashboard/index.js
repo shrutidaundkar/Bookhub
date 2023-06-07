@@ -36,20 +36,23 @@ const Home = () => {
     <div>
       <Topbar title={"Books Dashboard"} />
       <form onSubmit={handleSearch}>
+        <label for="bookSearch">Enter book name:</label>
         <input
           type="text"
+          id="bookSearch"
+          name="bookSearch"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search for a book"
         />
         <button type="submit">
-          <FontAwesomeIcon icon={faSearch} />
+          <FontAwesomeIcon icon={faSearch} /> Search
         </button>
       </form>
       {searchResult !== undefined && (
         <SearchResult searchResult={searchResult} />
       )}
-      <h1>Books by subjects</h1>
+      <h1 className="pull-left text-left">Books by subjects</h1>
       <SubjectBooks subject={"humor"} />
       <SubjectBooks subject={"fantasy"} />
     </div>

@@ -16,16 +16,13 @@ const BookCard = (props) => {
         <img
           class="book-card-img"
           src={`https://covers.openlibrary.org/b/id/${cover_id}-M.jpg`}
-          alt={`${title} by ${authors[0].name}`}
+          alt={`Cover of ${title} by ${authors[0].name} in ${first_publish_year}`}
         />
         <div class="book-card-info">
-          <p class="book-card-info-title">{title}</p>
+          <h3 class="book-card-info-title">{title}</h3>
           <p>
             <b>Author:</b>
             <i> {authors[0].name}</i>
-          </p>
-          <p>
-            <b>First Publish Year:</b> {first_publish_year}
           </p>
           <BookDetailsModal
             isModalOpen={isModalOpen}
