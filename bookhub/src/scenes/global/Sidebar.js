@@ -5,12 +5,9 @@ const Sidebar = () => {
         <h3>BookHub</h3>
       </div>
       <ul className="options">
-        <li>Home</li>
-        <li>Genres</li>
-        <li>My Books</li>
-        <li>Trending</li>
-        <li>Favourites</li>
-        <li>Contact Us</li>
+        <li href="/">Books</li>
+        <li href="/authors">Authors</li>
+        <li to={"/statistics"}>Statistics</li>
       </ul>
     </div>
   );

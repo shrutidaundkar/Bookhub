@@ -18,6 +18,7 @@
   height: 100vh;
   padding: 0;
   margin: 0;
+  font-family: sans-serif;
 }
 
 .search-bar {
@@ -36,7 +37,7 @@ input[type="text"] {
   border-radius: 4px;
   margin-right: 10px;
   width: 200px;
-} 
+}
 
 .sidebar {
   width: 200px;
@@ -74,7 +75,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 50vh; 
+  height: 50vh;
   width: 100%;
   padding: 10px;
 }
@@ -135,61 +136,61 @@ body {
   max-width: 100vw;
 }
 
-/* .book-card {
-  flex: none;
-  width: 200px;
-  height: 330px;
-  background-color: var(--gray);
-  margin: 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  text-align: center;
-} */
-
 .book-card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   background-color: var(--gray);
-  margin: 20px;
-}
-
-.book-card-title {
-  font-family: sans-serif;
-  font-weight: bold;
-  color: white;
-  margin-top: 10px;
-  height: 60px;
-  overflow: hidden;
+  margin: 10px 20px;
+  min-width: 360px;
+  height: 260px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .book-card-img {
-  width: 150px;
-  height: 250px;
-  flex: 1;
-} 
+  width: 125px;
+  height: 200px;
+}
 
-.book-details {
-  display: flex;
-  flex-direction: column;
-  flex: 2;
-  justify-content: center;
+.book-card-info {
+  text-align: left;
   padding-left: 20px;
 }
-
-.book-card-title {
-  font-family: sans-serif;
-  font-weight: bold;
-  color: white;
-  margin-top: 10px;
-  height: 60px;
-  overflow: hidden;
+.book-card-info-title {
+  font-size: large;
+  font-weight: bolder;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.book-card-author {
-  font-family: sans-serif;
-  font-weight: bold;
-  color: black;
-  margin-top: 10px;
+.modal-main {
+  position: fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2%;
+  /* display: flex; */
+  /* align-items: center; */
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+.modal-img {
+}
+.modal-details {
 }

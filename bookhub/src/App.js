@@ -6,6 +6,8 @@ import SearchResult from "./scenes/global/SearchResult";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./scenes/dashboard";
 import { useState } from "react";
+import Authors from "./scenes/authors";
+import Statistics from "./scenes/statistics";
 
 function App() {
   const [searchResult, setSearchResult] = useState(null);
@@ -20,6 +22,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/authors" element={<Authors />} />
+            <Route path="/statistics" element={<Statistics />} />
           </Routes>
         </BrowserRouter>
       </main>
@@ -28,4 +32,3 @@ function App() {
 }
 
 export default App;
-
