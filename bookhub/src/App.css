@@ -22,16 +22,6 @@
   overflow-y: scroll;
 }
 
-.search-bar {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-  padding: 15px;
-  background-color: var(--black);
-}
-
 input[type="text"] {
   padding: 10px;
   border: 1px solid var(--black);
@@ -79,6 +69,10 @@ body {
   height: 50vh;
   width: 100%;
   padding: 10px;
+  margin-right: 3%;
+}
+.search-result-container-card {
+  border: gray solid 1px;
 }
 
 .logo {
@@ -123,6 +117,7 @@ body {
   flex-grow: 1;
   overflow-y: scroll;
   text-align: left;
+  /* padding: 2%; */
 }
 
 body {
@@ -135,22 +130,26 @@ body {
 
 .book-container {
   display: flex;
-  overflow-x: scroll;
+  flex-direction: column;
+  align-items: center;
+  /* overflow-x: auto; */
+  width: 90%;
   padding: 10px;
-  width: 1290px;
-  max-width: 100vw;
+  margin: 3%;
 }
 
 .book-card {
   display: flex;
+  width: 100%;
+  box-sizing: border-box;
   align-items: center;
   padding: 10px;
   background-color: white;
   margin: 10px 20px;
-  min-width: 360px;
+  flex: 0 0 auto;
   height: 260px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 2% 8%;
 }
 
 .book-card-img {
@@ -229,4 +228,29 @@ body {
   width: auto;
   min-height: 200px;
   max-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .book-card {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    margin: 10px 20px;
+    flex: 0 0 auto;
+    height: 260px;
+    border-radius: 10px;
+    padding: 10px;
+  }
 }

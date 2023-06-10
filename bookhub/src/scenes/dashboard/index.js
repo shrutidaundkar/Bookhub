@@ -8,8 +8,6 @@ import SearchResult from "../global/SearchResult";
 import Topbar from "../global/Topbar";
 library.add(faSearch);
 const Home = () => {
-  // const [subjects, setSubjects] = useState([]);
-  // setSubjects(["humor", "fantasy", "love", "magic", "romance"]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState();
   const handleSearch = (e) => {
@@ -29,32 +27,41 @@ const Home = () => {
           authors: book.author_name || [],
           first_publish_year: book.first_publish_year,
           subject: book.subject[1],
+          key: book.key,
         });
       });
   };
   return (
     <div>
       <Topbar title={"Books Dashboard"} />
-      <form onSubmit={handleSearch}>
-        <label for="bookSearch">Enter book name:</label>
-        <input
-          type="text"
-          id="bookSearch"
-          name="bookSearch"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search for a book"
-        />
-        <button type="submit">
-          <FontAwesomeIcon icon={faSearch} /> Search
-        </button>
-      </form>
+      <div class="mx-auto p-2">
+        <form onSubmit={handleSearch}>
+          <label for="bookSearch" className=" h5 p-2">
+            Enter book name:
+          </label>
+          <input
+            className=""
+            type="text"
+            id="bookSearch"
+            name="bookSearch"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search for a book"
+          />
+          <button type="submit" className="btn btn-primary">
+            <FontAwesomeIcon icon={faSearch} /> Search
+          </button>
+        </form>
+      </div>
       {searchResult !== undefined && (
         <SearchResult searchResult={searchResult} />
       )}
-      <h1 className="pull-left text-left">Books by subjects</h1>
-      <SubjectBooks subject={"humor"} />
-      <SubjectBooks subject={"fantasy"} />
+      <h1 className=" text-right h3 p-2">
+        <b>
+          <i>Books by subjects</i>
+        </b>
+      </h1>
+      <SubjectBooks />
     </div>
   );
 };

@@ -21,7 +21,11 @@ const AuthorDetails = (props) => {
             alt={`${authorDetails.name} (${authorDetails.birth_date})`}
             className="card-container-img"
           />
-          <h2>{authorDetails.name}</h2>
+          <h4 className="text-center p-2">
+            <b>
+              <i>{authorDetails.name}</i>
+            </b>
+          </h4>
         </div>
       ) : null}
     </>
