@@ -8,8 +8,6 @@ import SearchResult from "../global/SearchResult";
 import Topbar from "../global/Topbar";
 library.add(faSearch);
 const Home = () => {
-  // const [subjects, setSubjects] = useState([]);
-  // setSubjects(["humor", "fantasy", "love", "magic", "romance"]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState();
   const handleSearch = (e) => {
@@ -31,7 +29,6 @@ const Home = () => {
           subject: book.subject[1],
           key: book.key,
         });
-        // console.log(searchResult.key);
       });
   };
   return (
@@ -52,7 +49,7 @@ const Home = () => {
             placeholder="Search for a book"
           />
           <button type="submit" className="btn btn-primary">
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon icon={faSearch} /> Search
           </button>
         </form>
       </div>
@@ -64,8 +61,7 @@ const Home = () => {
           <i>Books by subjects</i>
         </b>
       </h1>
-      <SubjectBooks subject={"humor"} />
-      <SubjectBooks subject={"fantasy"} />
+      <SubjectBooks />
     </div>
   );
 };

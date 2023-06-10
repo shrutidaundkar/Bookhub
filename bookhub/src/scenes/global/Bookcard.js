@@ -24,12 +24,16 @@ const BookCard = (props) => {
             <b>Author:</b>
             <i> {authors[0].name}</i>
           </p>
-          <BookDetailsModal
-            isModalOpen={isModalOpen}
-            closeModal={closeModal}
-            bookKey={key}
-            coverId={cover_id}
-          />
+          {key !== undefined &&
+            cover_id !== undefined &&
+            isModalOpen !== undefined && (
+              <BookDetailsModal
+                isModalOpen={isModalOpen}
+                closeModal={closeModal}
+                bookKey={key}
+                coverId={cover_id}
+              />
+            )}
           <button onClick={openModal} class="btn btn-block btn-primary">
             More info
           </button>

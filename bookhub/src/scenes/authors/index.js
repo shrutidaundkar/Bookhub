@@ -34,6 +34,7 @@ const Authors = () => {
     <div>
       <Topbar title={"Authors"} />
       <div class="mx-auto p-2">
+        <h1>Authors</h1>
         <label for="authorSearch" className=" h5 p-2">
           Enter author name:
         </label>
@@ -46,7 +47,7 @@ const Authors = () => {
           placeholder="Search for an author"
         />
         <button onClick={handleSearch} className="btn btn-primary">
-          <FontAwesomeIcon icon={faSearch} />
+          <FontAwesomeIcon icon={faSearch} /> Search
         </button>
       </div>
       {searchResult !== undefined ? (
