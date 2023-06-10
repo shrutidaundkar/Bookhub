@@ -4,27 +4,9 @@ import { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart } from "chart.js";
 import { DoughnutController } from "chart.js";
-import { Bar } from "react-chartjs-2";
-// import { Chart } from "chart.js";
+
 import { ArcElement, BarController, CategoryScale } from "chart.js";
 Chart.register(ArcElement, BarController, CategoryScale, DoughnutController);
-// Chart.register(ArcElement, DoughnutController);
-
-const generateColorVariations = (baseColor, alpha, steps) => {
-  const [r, g, b] = baseColor;
-  const result = [];
-
-  for (let i = 1; i <= steps; i++) {
-    const factor = i / steps;
-    result.push(
-      `rgba(${Math.round(r * factor)}, ${Math.round(g * factor)}, ${Math.round(
-        b * factor
-      )}, ${alpha})`
-    );
-  }
-
-  return result;
-};
 
 const Statistics = () => {
   const [chartData, setChartData] = useState(null);
@@ -45,7 +27,6 @@ const Statistics = () => {
 
   useEffect(() => {
     const fetchDataAndRenderChart = async () => {
-      const baseColor = [0, 0, 200];
       const borderColor = "rgba(0, 0, 0, 1)";
       const backgroundColors = [
         "#1B4F72",
@@ -75,7 +56,7 @@ const Statistics = () => {
     };
 
     fetchDataAndRenderChart();
-  }, []);
+  });
 
   if (!chartData) return <div>Loading...</div>;
 
