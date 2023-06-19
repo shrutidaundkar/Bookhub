@@ -1,11 +1,11 @@
-import SubjectBooks from "../global/SubjectBooks";
+import SubjectBooks from "../scenes/global/SubjectBooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import axios from "axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import SearchResult from "../global/SearchResult";
-import Topbar from "../global/Topbar";
+import SearchResult from "../scenes/global/SearchResult";
+import Topbar from "../scenes/global/Topbar";
 library.add(faSearch);
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,11 +56,7 @@ const Home = () => {
       {searchResult !== undefined && (
         <SearchResult searchResult={searchResult} />
       )}
-      <h1 className=" text-right h3 p-2">
-        <b>
-          <i>Books by subjects</i>
-        </b>
-      </h1>
+      <h1 className="text-left options p-3">Click to expand a subject Book:</h1>
       <SubjectBooks />
     </div>
   );

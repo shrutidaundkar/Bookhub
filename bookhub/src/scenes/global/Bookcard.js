@@ -3,6 +3,7 @@ import BookDetailsModal from "./BookDetails";
 
 const BookCard = (props) => {
   const { title, authors, first_publish_year, cover_id, key } = props.work;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);

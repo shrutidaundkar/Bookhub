@@ -37,11 +37,11 @@ const BookDetailsModal = (props) => {
                 />
                 <div className="col-sm-12 col-md-8 modal-details">
                   {title !== undefined && <h2>{title}</h2>}
-                  {description !== "" ? (
+                  {/* {description !== "" ? (
                     <p>
                       <b> Description:</b> {description}
                     </p>
-                  ) : null}
+                  ) : null} */}
                   <p>
                     <b>First Publish Year:</b> {first_publish_date}
                   </p>

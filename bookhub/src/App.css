@@ -85,6 +85,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-size: x-large;
 }
 
 .options-link {
@@ -129,13 +130,17 @@ body {
 }
 
 .book-container {
+  display: none;
+  transition: height 0.3s ease;
+}
+.book-container.expanded {
   display: flex;
   flex-direction: column;
   align-items: center;
   /* overflow-x: auto; */
   width: 90%;
   padding: 10px;
-  margin: 3%;
+  margin: 10px auto;
 }
 
 .book-card {
@@ -229,15 +234,26 @@ body {
   min-height: 200px;
   max-width: 300px;
 }
+.option-click {
+  border-bottom: 1px solid #f5f6fa;
+  cursor: pointer;
+  font-size: larger;
+  font-weight: bold;
+}
 
 @media (max-width: 768px) {
   .book-container {
+    display: none;
+    transition: height 0.3s ease;
+  }
+  .book-container.expanded {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x: auto;
     width: 100%;
     padding: 10px;
+    overflow: scroll;
   }
 
   .book-card {

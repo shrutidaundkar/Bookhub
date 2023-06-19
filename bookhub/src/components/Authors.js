@@ -3,8 +3,8 @@ import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import AuthorDetails from "../global/AuthorDetails";
-import Topbar from "../global/Topbar";
+import AuthorDetails from "../scenes/global/AuthorDetails";
+import Topbar from "../scenes/global/Topbar";
 import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faSearch);
 const Authors = () => {

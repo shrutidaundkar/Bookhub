@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BookCard from "../global/Bookcard";
-
+import { BooksData } from "../dashboard/BookContext";
 const SubjectBooks = () => {
-  const [subjectSelected, setSubjectSelected] = useState("humor");
   const [responseData, setResponseData] = useState([]);
+  const { booksData, setBooksData } = BooksData();
 
   useEffect(() => {
     const keys = [
@@ -15,53 +15,65 @@ const SubjectBooks = () => {
       "romance",
       "horror",
       "cooking",
+      "finance",
+      "management",
     ];
     const fetchData = async () => {
-      try {
-        const promises = keys.map((key) =>
-          axios.get(`http://openlibrary.org/subjects/${key}.json?limit=5`)
-        );
+      if (booksData.length === 0) {
+        try {
+          const promises = keys.map((key) =>
+            axios.get(`http://openlibrary.org/subjects/${key}.json?limit=5`)
+          );
 
-        const allResponses = await axios.all(promises);
-        const responseData = allResponses.map((response) => response.data);
-        setResponseData(responseData);
+          const allResponses = await axios.all(promises);
+          const responseData = allResponses.map((response) => response.data);
+          setResponseData(responseData);
+          console.log(responseData);
+          setBooksData(responseData);
+          console.log(booksData);
+        } catch (error) {
+          console.log("Error fetching data:", error);
+        }
+      } else {
+        setResponseData(booksData);
         console.log(responseData);
-      } catch (error) {
-        console.log("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [booksData, responseData, setBooksData]);
+
+  const toggleContainer = (index) => {
+    const updatedResponseData = [...responseData];
+    updatedResponseData[index].expanded = !updatedResponseData[index].expanded;
+    setResponseData(updatedResponseData);
+  };
   return (
     <div className="text-left bg-secondary p-3 mx-3">
-      <h2 className="text-left text-light">
-        <label for="options">Select a subject: </label>
-        <select
-          id="options"
-          name="options"
-          value={subjectSelected}
-          className="p-2 mx-2 selectpicker form-control"
-          onInput={(ev) => setSubjectSelected(ev.target.value)}
-        >
-          <option value="humor">humor</option>
-          <option value="fantasy">fantasy</option>
-          <option value="love">love</option>
-          <option value="magic">magic</option>
-          <option value="romance">romance</option>
-          <option value="horror">horror</option>
-          <option value="cooking">cooking</option>
-        </select>
-      </h2>
-
       {responseData !== undefined ? (
-        <div class="book-container">
-          {responseData
-            .find((res) => res.key === `/subjects/${subjectSelected}`)
-            ?.works?.map((work) => (
-              <BookCard work={work} />
-            ))}
-        </div>
+        <>
+          {responseData.map((response, index) => {
+            return (
+              <>
+                <h2
+                  className="text-light option-click"
+                  onClick={() => toggleContainer(index)}
+                >
+                  Subject: {response.name} {response.expanded ? "▼" : "►"}
+                </h2>
+                <div
+                  className={`book-container ${
+                    response.expanded ? "expanded" : ""
+                  }`}
+                >
+                  {response.works?.map((work, key) => {
+                    return <BookCard work={work} key={key} />;
+                  })}
+                </div>
+              </>
+            );
+          })}
+        </>
       ) : (
         <div>Data not found!</div>
       )}
